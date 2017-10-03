@@ -1,20 +1,11 @@
-<!DOCTYPE html>
 <html>
-
 	<head>
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
-		<link href="style.css" rel="stylesheet" />
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+		<div ng-include="'Imports.html'"></div>
 	</head>
-	<body background="assets/img/backgrounds/1.jpg">
-
+<body ng-app="" background="assets/img/backgrounds/1.jpg">
 	<nav class="navbar navbar-inverse">
-		  <div class="container-fluid">
+		<div class="container-fluid">
 		    <div class="navbar-header">
 		      <a class="navbar-brand" href="#"> <p style="color:#80ffff;"> School System</p></a>
 		    </div>
@@ -23,32 +14,29 @@
 		      <li><a href="parent.html">Parent</a></li>
 		      <li><a href="student.html">Student</a></li>
 		      <li><a href="sendnotification.html">Send Notification</a></li>
-			<li><a href="uploadtimetable.html">Upload Timetable</a></li>			
-			<li><a href="uploadevent.html">Upload Event</a></li>
-		    		    
-		</ul>
-		  </div>
-		</nav>
-
-
-<div class="container">
+			  <li><a href="uploadtimetable.html">Upload Timetable</a></li>			
+			  <li><a href="uploadevent.html">Upload Event</a></li>
+		    </ul>
+		</div>
+	</nav>
+    <div class="container">
 	  <div class="panel panel-default">
-	    <div class="panel-heading"><h3>Upload Timetable</h3></div>
-	    
+	    <div class="panel-heading"><h3>Upload Timetable</h3>
+		</div>
 		<div class="panel-body">
-<div class="py-5">
-<div class="container">
-    <div class="row">
-        <div class="col-md-11">
-		<form name="" action="" method="post">
-		<div class="form-group">
-		     <B><label>Grade:</label></B><br>
-			 <select ng-model="Grade">
-			 	<option value="">--------------</option>
-             </select>
-			 <label ng-switch="Grade" class="form-group">
-               <div ng-switch-when="">
-                 <B></B>
+          <div class="py-5">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-11">
+		           <form name="" action="" method="post">
+		             <div class="form-group">
+		                <B><label>Grade:</label></B><br>
+			            <select ng-model="Grade">
+			 	        <option value="">--------------</option>
+                        </select>
+			            <label ng-switch="Grade" class="form-group">
+                        <div ng-switch-when="">
+                        <B></B>
                </div>
              <div ng-switch-when="">
                  <B></B>
@@ -101,9 +89,7 @@ var app = angular.module('plunkr', [])
     });
   });
 </script>
-
-
-	</body>
+</body>
 </html>
 
 

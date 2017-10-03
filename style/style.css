@@ -86,3 +86,21 @@ p b{
 	text-transform:uppercase;
 	font-size:18px;
 }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+
+        }
+
+        .borderless td, .borderless th {
+            border: none;
+        }
+
+
+        td {
+            border: transparent;
+            padding: 3px;
+            text-align: middle;
+            border-bottom: 1px solid #ddd;
+        }

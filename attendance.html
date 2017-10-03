@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<div ng-include="'Imports.html'"></div>
+	</head>
+	<body ng-app="" background="assets/img/backgrounds/1.jpg">
+	<nav class="navbar navbar-inverse">
+		  <div class="container-fluid" ng-controller="ctrl">
+		    <div class="navbar-header">
+		     <a class="navbar-brand" href="#"> <p style="color:#80ffff;"> School System</p></a>
+		    </div>
+		    <ul class="nav navbar-nav">
+		      <li class="active"><a href="profile.html">Profile</a></li>
+		      <li><a href="attendance.html">Take Attendance</a></li>
+		      <li><a href="grades.html">Grades</a></li>
+		      <li><a href="studentaccess.html">Student Access</a></li>
+		     <li><a href="">Logout</a></li>		    		    
+		</ul>
+		  </div>
+		</nav>	
+	<div class="container">
+	  <div class="panel panel-default">
+	    <div class="panel-heading">Take Attendance</div>
+	    <div class="panel-body"><h3>Select Level :</h3>
+		<select>
+           <option value="option1">Option 1</option>
+           <option value="option2">Option 2</option>
+           <option value="option3">Option 3</option>
+        </select>
+		<div class="panel-body"><h3>Select Class :</h3>
+		<select>
+           <option value="option1">Option 1</option>
+           <option value="option2">Option 2</option>
+           <option value="option3">Option 3</option>
+        </select>
+		<br><br>
+		<div class="panel-body">
+		<button type="button" class="btn btn-primary">Submit</button>
+	</div>	
+	</body>
+</html>
