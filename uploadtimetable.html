@@ -2,6 +2,7 @@
 	<head>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 		<div ng-include="'Imports.html'"></div>
+		<title>Upload Timetables</title>
 	</head>
 <body ng-app="" background="assets/img/backgrounds/1.jpg">
 	<nav class="navbar navbar-inverse">
@@ -31,43 +32,19 @@
 		           <form name="" action="" method="post">
 		             <div class="form-group">
 		                <B><label>Grade:</label></B><br>
-			            <select ng-model="Grade">
-			 	        <option value="">--------------</option>
+			            <select>
+                        <option value="option1">Option 1</option>
+                        <option value="option2">Option 2</option>
+                        <option value="option3">Option 3</option>
                         </select>
-			            <label ng-switch="Grade" class="form-group">
-                        <div ng-switch-when="">
-                        <B></B>
-               </div>
-             <div ng-switch-when="">
-                 <B></B>
-             </div>
-             <div ng-switch-when="">
-                 <B></B>
-             </div>
-			 <div ng-switch-when="">
-                 <B></B>
-             </div>
-            </label>
 		</div>
 		<div class="form-group">
 		     <B><label>Classroom:</label></B><br>
-			 <select ng-model="Classroom">
-			 	<option value="">--------------</option>
+			 <select>
+             <option value="option1">Option 1</option>
+             <option value="option2">Option 2</option>
+             <option value="option3">Option 3</option>
              </select>
-			 <label ng-switch="Classroom" class="form-group">
-               <div ng-switch-when="">
-                 <B></B>
-               </div>
-             <div ng-switch-when="">
-                 <B></B>
-             </div>
-             <div ng-switch-when="">
-                 <B></B>
-             </div>
-			 <div ng-switch-when="">
-                 <B></B>
-             </div>
-            </label>
 		</div>
 		   <div ng-app="plunkr" ng-controller="UploadController" class="form-group">
               <input type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc">
@@ -91,21 +68,3 @@ var app = angular.module('plunkr', [])
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
