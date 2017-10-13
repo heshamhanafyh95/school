@@ -8,9 +8,27 @@ var config = {
 };
 firebase.initializeApp(config);
 
+<<<<<<< HEAD
 var employeeapp = angular.module("employeeApp", ["firebase"]);
 
 employeeapp.factory("EmployeeSignUpForm", ["$firebaseArray",
+=======
+<<<<<<< HEAD
+var employeeapp = angular.module("employeeApp", ["firebase"]);
+
+employeeapp.factory("EmployeeSignUpForm", ["$firebaseArray",
+=======
+<<<<<<< HEAD
+var employeeapp = angular.module("employeeApp", ["firebase"]);
+
+employeeapp.factory("EmployeeSignUpForm", ["$firebaseArray",
+=======
+var app = angular.module("employeeApp", ["firebase"]);
+
+app.factory("EmployeeSignUpForm", ["$firebaseArray",
+>>>>>>> 41aeb0b350e9d8f5b4b6600715557446d5e76243
+>>>>>>> 83fefb9c77975624991d7e961c0e77f3cd679120
+>>>>>>> f44a950a8c4e41e4dcdd9abe8fe143f0962d8929
   function($firebaseArray) {
 
     var ref = firebase.database().ref().child("employees");
@@ -19,9 +37,27 @@ employeeapp.factory("EmployeeSignUpForm", ["$firebaseArray",
   }
 ]);
 
+<<<<<<< HEAD
 var parentapp = angular.module("parentApp", ["firebase"]);
 
 parentapp.factory("ParentSignUpForm", ["$firebaseArray",
+=======
+<<<<<<< HEAD
+var parentapp = angular.module("parentApp", ["firebase"]);
+
+parentapp.factory("ParentSignUpForm", ["$firebaseArray",
+=======
+<<<<<<< HEAD
+var parentapp = angular.module("parentApp", ["firebase"]);
+
+parentapp.factory("ParentSignUpForm", ["$firebaseArray",
+=======
+var app2 = angular.module("parentApp", ["firebase"]);
+
+app2.factory("ParentSignUpForm", ["$firebaseArray",
+>>>>>>> 41aeb0b350e9d8f5b4b6600715557446d5e76243
+>>>>>>> 83fefb9c77975624991d7e961c0e77f3cd679120
+>>>>>>> f44a950a8c4e41e4dcdd9abe8fe143f0962d8929
   function($firebaseArray) {
 
     var ref2 = firebase.database().ref().child("parents");
@@ -30,12 +66,27 @@ parentapp.factory("ParentSignUpForm", ["$firebaseArray",
   }
 ]);
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 83fefb9c77975624991d7e961c0e77f3cd679120
+>>>>>>> f44a950a8c4e41e4dcdd9abe8fe143f0962d8929
 var attendanceapp = angular.module("attendanceApp", ["firebase"]);
 
 attendanceapp.factory("AttendanceSignUpForm", ["$firebaseArray",
   function($firebaseArray) {
 
+<<<<<<< HEAD
     var ref3 = firebase.database().ref().child("student/2/attendance");
+=======
+<<<<<<< HEAD
+    var ref3 = firebase.database().ref().child("student/2/attendance");
+=======
+    var ref3 = firebase.database().ref().child("attendance");
+>>>>>>> 83fefb9c77975624991d7e961c0e77f3cd679120
+>>>>>>> f44a950a8c4e41e4dcdd9abe8fe143f0962d8929
 
     return $firebaseArray(ref3);
   }
@@ -46,7 +97,15 @@ var gradesapp = angular.module("gradesApp", ["firebase"]);
 gradesapp.factory("GradesSignUpForm", ["$firebaseArray",
   function($firebaseArray) {
 
+<<<<<<< HEAD
 	var ref4 = firebase.database().ref().child("student/2/grades");
+=======
+<<<<<<< HEAD
+	var ref4 = firebase.database().ref().child("student/2/grades");
+=======
+    var ref4 = firebase.database().ref().child("grades");
+>>>>>>> 83fefb9c77975624991d7e961c0e77f3cd679120
+>>>>>>> f44a950a8c4e41e4dcdd9abe8fe143f0962d8929
 
     return $firebaseArray(ref4);
   }
@@ -55,15 +114,52 @@ gradesapp.factory("GradesSignUpForm", ["$firebaseArray",
 
 
 employeeapp.controller("EmployeeCtrl", ["$scope", "EmployeeSignUpForm",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+
+
+app.controller("EmployeeCtrl", ["$scope", "EmployeeSignUpForm",
+>>>>>>> 41aeb0b350e9d8f5b4b6600715557446d5e76243
+>>>>>>> 83fefb9c77975624991d7e961c0e77f3cd679120
+>>>>>>> f44a950a8c4e41e4dcdd9abe8fe143f0962d8929
 
   function($scope, EmployeeSignUpForm) {
 
     $scope.E = EmployeeSignUpForm;
+<<<<<<< HEAD
     
     $scope.employeeInformation = function() {
 		
       $scope.E.$add({
 		firstname: $scope.firstname,
+=======
+
+    $scope.employeeInformation = function() {
+<<<<<<< HEAD
+	
+      $scope.E.$add({
+		firstname: $scope.firstname,
+=======
+<<<<<<< HEAD
+	
+      $scope.E.$add({
+		firstname: $scope.firstname,
+=======
+<<<<<<< HEAD
+	
+      $scope.E.$add({
+		firstname: $scope.firstname,
+=======
+
+      $scope.E.$add({
+        firstname: $scope.firstname,
+>>>>>>> 352340096d5c90a7d9f3c194e3e7ac3116f5a608
+>>>>>>> 41aeb0b350e9d8f5b4b6600715557446d5e76243
+>>>>>>> 83fefb9c77975624991d7e961c0e77f3cd679120
+>>>>>>> f44a950a8c4e41e4dcdd9abe8fe143f0962d8929
         lastname: $scope.lastname,
 		position: $scope.position,
 		phonenumber: $scope.phonenumber,
@@ -82,7 +178,19 @@ employeeapp.controller("EmployeeCtrl", ["$scope", "EmployeeSignUpForm",
   }
 ]);
 
+<<<<<<< HEAD
 parentapp.controller("ParentCtrl", ["$scope", "ParentSignUpForm",
+=======
+<<<<<<< HEAD
+parentapp.controller("ParentCtrl", ["$scope", "ParentSignUpForm",
+=======
+<<<<<<< HEAD
+parentapp.controller("ParentCtrl", ["$scope", "ParentSignUpForm",
+=======
+app2.controller("ParentCtrl", ["$scope", "ParentSignUpForm",
+>>>>>>> 41aeb0b350e9d8f5b4b6600715557446d5e76243
+>>>>>>> 83fefb9c77975624991d7e961c0e77f3cd679120
+>>>>>>> f44a950a8c4e41e4dcdd9abe8fe143f0962d8929
 
   function($scope, ParentSignUpForm) {
 
@@ -108,6 +216,13 @@ parentapp.controller("ParentCtrl", ["$scope", "ParentSignUpForm",
   }
 ]);
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 83fefb9c77975624991d7e961c0e77f3cd679120
+>>>>>>> f44a950a8c4e41e4dcdd9abe8fe143f0962d8929
 attendanceapp.controller("AttendanceCtrl", ["$scope", "AttendanceSignUpForm",
 
   function($scope, AttendanceSignUpForm) {
@@ -150,6 +265,14 @@ gradesapp.controller("GradesCtrl", ["$scope", "GradesSignUpForm",
   }
 ]);
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 41aeb0b350e9d8f5b4b6600715557446d5e76243
+>>>>>>> 83fefb9c77975624991d7e961c0e77f3cd679120
+>>>>>>> f44a950a8c4e41e4dcdd9abe8fe143f0962d8929
 
 
 
