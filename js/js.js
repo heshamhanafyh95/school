@@ -39,9 +39,15 @@ app.controller("EmployeeCtrl", ["$scope", "EmployeeSignUpForm",
     $scope.E = EmployeeSignUpForm;
 
     $scope.employeeInformation = function() {
+<<<<<<< HEAD
 	
       $scope.E.$add({
 		firstname: $scope.firstname,
+=======
+
+      $scope.E.$add({
+        firstname: $scope.firstname,
+>>>>>>> 352340096d5c90a7d9f3c194e3e7ac3116f5a608
         lastname: $scope.lastname,
 		position: $scope.position,
 		phonenumber: $scope.phonenumber,
