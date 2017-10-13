@@ -1,51 +1,67 @@
 <html>
-	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-		<div ng-include="'Imports.html'"></div>
+<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
+		<link href="style/style.css" rel="stylesheet" />
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/form-elements.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+		<script src="js/js.js"></script>
 		<title>Upload Timetables</title>
 	</head>
 <body ng-app="" background="assets/img/backgrounds/1.jpg">
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 		    <div class="navbar-header">
-		      <a class="navbar-brand" href="#"> <p style="color:#80ffff;"> School System</p></a>
+		      <a class="navbar-brand" href="#"><img src="1.png" width="30" height="30"></a>
 		    </div>
 		    <ul class="nav navbar-nav">
 		      <li><a href="employee.html">Employee</a></li>
 		      <li><a href="parent.html">Parent</a></li>
 		      <li><a href="student.html">Student</a></li>
 		      <li><a href="sendnotification.html">Send Notification</a></li>
-			  <li><a href="uploadtimetable.html">Upload Timetable</a></li>			
+			  <li class="active"><a href="#">Upload Timetable</a></li>			
 			  <li><a href="uploadevent.html">Upload Event</a></li>
 		    </ul>
 		</div>
 	</nav>
     <div class="container">
-	  <div class="panel panel-default">
-	    <div class="panel-heading"><h3>Upload Timetable</h3>
-		</div>
-		<div class="panel-body">
-          <div class="py-5">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-11">
-		           <form name="" action="" method="post">
-		             <div class="form-group">
-		                <B><label>Grade:</label></B><br>
-			            <select>
-                        <option value="option1">Option 1</option>
-                        <option value="option2">Option 2</option>
-                        <option value="option3">Option 3</option>
-                        </select>
-		</div>
-		<div class="form-group">
-		     <B><label>Classroom:</label></B><br>
-			 <select>
-             <option value="option1">Option 1</option>
-             <option value="option2">Option 2</option>
-             <option value="option3">Option 3</option>
-             </select>
-		</div>
+		<div class="panel panel-default">
+			<div class="panel-heading"><h3><B>Upload Timetable</B></h3></div>
+			<div class="panel-body">
+				<div class="py-5">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-11" ng-app="attendanceApp" ng-controller="AttendanceCtrl">
+								<form ng-submit="attendance()">
+								<div class="form-group">
+								          <B><label>Level</label></B><br>
+										   <select class="form-control" ng-model="level">
+                                                 <option value="option1">Option 1</option>
+                                                 <option value="option2">Option 2</option>
+                                                 <option value="option3">Option 3</option>
+                                           </select>
+							    </div>
+								<div class="form-group">
+										<B><label>Classroom</label></B><br>
+										   <select class="form-control" ng-model="class">
+                                                 <option value="option1">Option 1</option>
+                                                 <option value="option2">Option 2</option>
+                                                 <option value="option3">Option 3</option>
+                                           </select>
+							    </div>								
 		   <div ng-app="plunkr" ng-controller="UploadController" class="form-group">
               <input type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc">
 			  <img ng-src="{{imageSrc}}">
@@ -55,6 +71,10 @@
       </div>
 	  </div>
   </div>
+</div>
+</div>
+        </div>
+    </div>
 </div>
 <script>
 var app = angular.module('plunkr', [])
