@@ -49,15 +49,20 @@
 		<form name="F" ng-submit="parentInformation()">
 		<div class="form-group">
               <B><label>First name</label></B> 
-			  <input type="text" ng-model="firstname" class="form-control" placeholder="Abdallah">
+			  <input type="text" name="Fn" ng-model="firstname" class="form-control" placeholder="Abdallah" required>
+			  <span ng-show="F.Fn.$dirty && F.Fn.$error.required">Required!</span>
         </div>
 		<div class="form-group">
               <B><label>Last name</label></B> 
-			  <input type="text" ng-model="lastname" class="form-control" placeholder="Elgamal">
+			  <input type="text" name="Ln" ng-model="lastname" class="form-control" placeholder="Elgamal" required>
+			  <span ng-show="F.Ln.$dirty && F.Ln.$error.required">Required!</span>
         </div>
 		<div class="form-group">
               <B><label>Phone number</label></B> 
-			  <input type="text" ng-model="phonenumber" class="form-control" placeholder="+20xxxxxxxxxx">
+			  <input type="text" name="Pn" ng-model="phonenumber" class="form-control" ng-minlength="9" ng-maxlength="12" placeholder="+20xxxxxxxxxx" required>
+			  <span ng-show="F.Pn.$dirty && F.Pn.$error.required">Required!</span>
+			  <span ng-show="F.Pn.$dirty && F.Pn.$error.minlength">Not a phone number!</span>
+			  <span ng-show="F.Pn.$dirty && F.Pn.$error.maxlength">Not a phone number!</span>
         </div>
 		<div class="form-group">
               <B><label>Email ID</label></B> 

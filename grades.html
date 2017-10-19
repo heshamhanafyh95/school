@@ -19,6 +19,7 @@
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 		<script src="js/js.js"></script>
+		<style>input.ng-invalid{border:1px solid red;}</style>
 	    <title>Grades</title>
 </head>
 <body background="assets/img/backgrounds/1.jpg">
@@ -44,32 +45,35 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-md-11" ng-app="gradesApp" ng-controller="GradesCtrl">
-								<form ng-submit="grades()">
+								<form name="F" ng-submit="grades()">
 								<div class="form-group">
 								          <B><label>Level</label></B><br>
-										   <select class="form-control" ng-model="level">
+										   <select class="form-control" name="lev" ng-model="level" required>
                                                  <option value="option1">Option 1</option>
                                                  <option value="option2">Option 2</option>
                                                  <option value="option3">Option 3</option>
                                            </select>
+										   <span ng-show="F.lev.$dirty && F.lev.$error.required">Required!</span>
 							    </div>
 								<div class="form-group">
 										<B><label>Classroom</label></B><br>
-										   <select class="form-control" ng-model="classroom">
+										   <select class="form-control" name="classr" ng-model="classroom" required>
                                                  <option value="option1">Option 1</option>
                                                  <option value="option2">Option 2</option>
                                                  <option value="option3">Option 3</option>
                                            </select>
+										   <span ng-show="F.classr.$dirty && F.classr.$error.required">Required!</span>
 							    </div>
 								<div class="form-group">
 										<B><label>Grade</label></B><br>
-										   <select class="form-control" ng-model="grade">
+										   <select class="form-control" name="gr" ng-model="grade" required>
                                                  <option value="option1">Option 1</option>
                                                  <option value="option2">Option 2</option>
                                                  <option value="option3">Option 3</option>
                                            </select>
+										   <span ng-show="F.gr.$dirty && F.gr.$error.required">Required!</span>
 							    </div>
-								<button type="submit" class="btn btn-primary"><B>Submit</B></button>
+								<button type="submit" class="btn btn-primary" ng-disabled="F.$invalid"><B>Submit</B></button>
 								</form>
 							</div>
                     </div>

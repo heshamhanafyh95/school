@@ -22,7 +22,7 @@
 		<style>input.ng-invalid{border:1px solid red;}</style>
 		<title>Student page</title>
 	</head>
-	<body ng-app="" background="assets/img/backgrounds/1.jpg">
+	<body background="assets/img/backgrounds/1.jpg">
 	<nav class="navbar navbar-inverse">
 		  <div class="container-fluid">
 		    <div class="navbar-header">
@@ -45,17 +45,21 @@
 <div class="py-5">
 <div class="container">
     <div class="row">
-        <div class="col-md-11">
-		<form name="F">
+        <div class="col-md-11" ng-app="studentApp" ng-controller="StudentCtrl">
+		<form name="F" ng-submit="studentInformation()">
 		<div class="form-group">
-              <B><label>First name</label></B> <input type="text" class="form-control" placeholder="Abdallah">
+              <B><label>First name</label></B> 
+			  <input type="text" name="Fn" ng-model="firstname" class="form-control" placeholder="Abdallah" required>
+			  <span ng-show="F.Fn.$dirty && F.Fn.$error.required">Required!</span>
         </div>
 		<div class="form-group">
-              <B><label>Last name</label></B> <input type="text" class="form-control" placeholder="Elgamal">
+              <B><label>Last name</label></B>
+			  <input type="text" name="Ln" ng-model="lastname" class="form-control" placeholder="Elgamal" required>
+			  <span ng-show="F.Ln.$dirty && F.Ln.$error.required">Required!</span>
         </div>
 		<div class="form-group">
-		     <B><label>Grade</label></B><br>
-			 <select class="form-control">
+		     <B><label>Level</label></B><br>
+			 <select class="form-control" ng-model="level">
            <option value="option1">Option 1</option>
            <option value="option2">Option 2</option>
            <option value="option3">Option 3</option>
@@ -63,7 +67,7 @@
 		</div>
 		<div class="form-group">
 		     <B><label>Classroom</label></B><br>
-			<select class="form-control">
+			<select class="form-control" ng-model="classroom">
            <option value="option1">Option 1</option>
            <option value="option2">Option 2</option>
            <option value="option3">Option 3</option>
@@ -72,7 +76,10 @@
 		</div>
 		<div class="form-group">
               <B><label>Phone number</label></B>
-			  <input type="text" class="form-control" placeholder="+20xxxxxxxxxx">
+			  <input type="number" name="Pn" ng-model="phonenumber" class="form-control" ng-minlength="9" ng-maxlength="12" placeholder="+20xxxxxxxxxx" required>
+			  <span ng-show="F.Pn.$dirty && F.Pn.$error.required">Required!</span>
+			  <span ng-show="F.Pn.$dirty && F.Pn.$error.minlength">Not a phone number!</span>
+			  <span ng-show="F.Pn.$dirty && F.Pn.$error.maxlength">Not a phone number!</span>
         </div>
 		<div class="form-group">
               <B><label>Email ID</label></B> 
@@ -82,7 +89,7 @@
         </div>
 		<div class="form-group">
               <B><label>Password</label></B> 
-			  <input type="password" name="pass" ng-model="password" class="form-control" ng-minlength="5" ng-maxlength="10" placeholder="********" required>
+			  <input type="password" name="pass" ng-model="password" class="form-control" ng-minlength="6" ng-maxlength="9" placeholder="********" required>
 			  <span ng-show="F.pass.$dirty && F.pass.$error.required">Required!</span>
 			  <span ng-show="F.pass.$dirty && F.pass.$error.minlength">Too short!</span>
 			  <span ng-show="F.pass.$dirty && F.pass.$error.maxlength">Too long!</span>
@@ -94,21 +101,5 @@
 </div>
 	</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
