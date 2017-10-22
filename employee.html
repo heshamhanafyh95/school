@@ -59,12 +59,14 @@
 									</div>
 									<div class="form-group">
 										<B><label>Position</label></B><br>
-										<select class="form-control" ng-model="position">
+										<select class="form-control" name="Pos" ng-model="position" required>
+										<option value="">None</option>
                                         <option value="admin">Admin</option>
                                         <option value="teacher">Teacher</option>
                                         <option value="bussupervisor">Bus Supervisor</option>
 										<option value="driver">Driver</option>
                                         </select>
+										<span ng-show="F.Pos.$dirty && F.Pos.$error.required">Required!</span>
 									</div>
 									<div class="form-group">
 										<B><label>Phone number</label></B> 

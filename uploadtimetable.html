@@ -19,6 +19,7 @@
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 		<script src="js/js.js"></script>
+		<style>input.ng-invalid{border:1px solid red;}</style>
 		<title>Upload Timetables</title>
 	</head>
 <body ng-app="" background="assets/img/backgrounds/1.jpg">
@@ -45,30 +46,35 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-md-11" ng-app="attendanceApp" ng-controller="AttendanceCtrl">
-								<form ng-submit="attendance()">
+								<form name="F" ng-submit="attendance()">
 								<div class="form-group">
 								          <B><label>Level</label></B><br>
-										   <select class="form-control" ng-model="level">
+										   <select class="form-control" name="lev" ng-model="level" required>
+										         <option value="">None</option>
                                                  <option value="option1">Option 1</option>
                                                  <option value="option2">Option 2</option>
                                                  <option value="option3">Option 3</option>
                                            </select>
+										   <span ng-show="F.lev.$dirty && F.lev.$error.required">Required!</span>
 							    </div>
 								<div class="form-group">
 										<B><label>Classroom</label></B><br>
-										   <select class="form-control" ng-model="class">
+										   <select class="form-control" name="classr" ng-model="class" required>
+										         <option value="">None</option>
                                                  <option value="option1">Option 1</option>
                                                  <option value="option2">Option 2</option>
                                                  <option value="option3">Option 3</option>
                                            </select>
+										   <span ng-show="F.classr.$dirty && F.classr.$error.required">Required!</span>
 							    </div>								
-		   <div ng-app="plunkr" ng-controller="UploadController" class="form-group">
-              <input type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc">
-			  <img ng-src="{{imageSrc}}">
-		   </div>
-		   <button type="submit" class="btn btn-primary"><B>Submit</B></button>
-		   </form>
-      </div>
+		                        <div ng-app="plunkr" ng-controller="UploadController" class="form-group">
+                                          <input type="file" name="fileupload" ng-file-select="onFileSelect($files)" ng-model="imageSrc" required>
+			                                  <img ng-src="{{imageSrc}}">
+											  <span ng-show="F.fileupload.$dirty && F.fileupload.$error.required">Required!</span>
+		                        </div>
+		                        <button type="submit" class="btn btn-primary" ng-disabled="F.$invalid"><B>Submit</B></button>
+		                 </form>
+               </div>
 	  </div>
   </div>
 </div>

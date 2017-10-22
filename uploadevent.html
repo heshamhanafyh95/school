@@ -19,6 +19,7 @@
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 		<script src="js/js.js"></script>
+		<style>input.ng-invalid{border:1px solid red;}</style>
 		<title>Upload Events</title>
 	</head>
 	<body ng-app="" background="assets/img/backgrounds/1.jpg">
@@ -44,12 +45,13 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-		<form name="" action="" method="post">
+		<form name="F" action="" method="post">
 		   <div ng-app="plunkr" ng-controller="UploadController" class="form-group">
-              <input type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc">
+              <input type="file" name="fileupload" ng-file-select="onFileSelect($files)" ng-model="imageSrc" required>
 			  <img ng-src="{{imageSrc}}">
+			  <span ng-show="F.fileupload.$dirty && F.fileupload.$error.required">Required!</span>
 		   </div>
-		   <button type="submit" class="btn btn-primary"><B>Submit</B></button>
+		   <button type="submit" class="btn btn-primary" ng-disabled="F.$invalid"><B>Submit</B></button>
 		   </form>
       </div>
 	  </div>
@@ -67,11 +69,6 @@ var app = angular.module('plunkr', [])
 </script>
 	</body>
 </html>
-
-
-
-
-
 
 
 
