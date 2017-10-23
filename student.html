@@ -53,51 +53,29 @@
 			  <span ng-show="F.Fn.$dirty && F.Fn.$error.required">Required!</span>
         </div>
 		<div class="form-group">
-              <B><label>Last name</label></B>
-			  <input type="text" name="Ln" pattern="[A-Za-z]+" ng-model="lastname" class="form-control" placeholder="Elgamal" required>
-			  <span ng-show="F.Ln.$dirty && F.Ln.$error.required">Required!</span>
+              <B><label>Full name</label></B>
+			  <input type="text" name="Fnn" pattern="[A-Z\sa-z]+" ng-model="fullname" class="form-control" placeholder="Elgamal" required>
+			  <span ng-show="F.Fnn.$dirty && F.Fnn.$error.required">Required!</span>
         </div>
 		<div class="form-group">
-		     <B><label>Level</label></B><br>
-			 <select class="form-control" name="lev" ng-model="level" required>
-                 <option value="">None</option>
-		         <option value="option1">Option 1</option>
-                 <option value="option2">Option 2</option>
-                 <option value="option3">Option 3</option>
-             </select>
-			 <span ng-show="F.lev.$dirty && F.lev.$error.required">Required!</span>
+			  <B><label>Parent phone number</label></B> 
+			  <input type="text" name="Pn" pattern="[0-9]+" ng-model="parentphonenumber" class="form-control" ng-minlength="9" ng-maxlength="12" placeholder="+20xxxxxxxxxx" required>
+			  <span ng-show="F.Pn.$dirty && F.Pn.$error.required">Required!</span>
+			  <span ng-show="F.Pn.$dirty && F.Pn.$error.minlength">Not a phone number!</span>
+			  <span ng-show="F.Pn.$dirty && F.Pn.$error.maxlength">Not a phone number!</span>
 		</div>
 		<div class="form-group">
-		     <B><label>Classroom</label></B><br>
-			 <select class="form-control" name="classr" ng-model="classroom" required>
+		     <B><label>Class</label></B><br>
+			 <select class="form-control" name="classr" ng-model="class" required>
 			     <option value="">None</option>
-                 <option value="option1">Option 1</option>
-                 <option value="option2">Option 2</option>
-                 <option value="option3">Option 3</option>
+                 <option value="5A">5A</option>
+                 <option value="5B">5B</option>
+                 <option value="6A">6A</option>
+				 <option value="7B">7B</option>
              </select>
 			 <span ng-show="F.classr.$dirty && F.classr.$error.required">Required!</span>
             </label>
 		</div>
-		<div class="form-group">
-              <B><label>Phone number</label></B>
-			  <input type="number" name="Pn" ng-model="phonenumber" class="form-control" ng-minlength="9" ng-maxlength="12" placeholder="+20xxxxxxxxxx" required>
-			  <span ng-show="F.Pn.$dirty && F.Pn.$error.required">Required!</span>
-			  <span ng-show="F.Pn.$dirty && F.Pn.$error.minlength">Not a phone number!</span>
-			  <span ng-show="F.Pn.$dirty && F.Pn.$error.maxlength">Not a phone number!</span>
-        </div>
-		<div class="form-group">
-              <B><label>Email ID</label></B> 
-			  <input type="email" name="emailID" ng-model="email" class="form-control" placeholder="Student@example.com" required>
-			  <span ng-show="F.emailID.$dirty && F.emailID.$error.required">Required!</span>
-			  <span ng-show="F.emailID.$dirty && F.emailID.$error.email">Not an email!</span>
-        </div>
-		<div class="form-group">
-              <B><label>Password</label></B> 
-			  <input type="password" name="pass" ng-model="password" class="form-control" ng-minlength="6" ng-maxlength="9" placeholder="********" required>
-			  <span ng-show="F.pass.$dirty && F.pass.$error.required">Required!</span>
-			  <span ng-show="F.pass.$dirty && F.pass.$error.minlength">Too short!</span>
-			  <span ng-show="F.pass.$dirty && F.pass.$error.maxlength">Too long!</span>
-        </div>
 		<button type="submit" class="btn btn-primary" ng-disabled="F.$invalid"><B>Submit</B></button>
 		</form>
 		</div>
@@ -105,5 +83,3 @@
 </div>
 	</body>
 </html>
-
-

@@ -13,6 +13,7 @@ var parentapp = angular.module("parentApp", ["firebase"]);
 var studentapp = angular.module("studentApp", ["firebase"]);
 var attendanceapp = angular.module("attendanceApp", ["firebase"]);
 var gradesapp = angular.module("gradesApp", ["firebase"]);
+var uploadeventapp = angular.module("uploadeventApp", ["firebase"]);
 
 employeeapp.controller("EmployeeCtrl", ["$scope",
 
@@ -23,19 +24,11 @@ employeeapp.controller("EmployeeCtrl", ["$scope",
 	  {
 		  var usersRef = ref.child("employees/"+$scope.phonenumber);		
           usersRef.set({
-			  firstname: $scope.firstname,
-              lastname: $scope.lastname,
+			  name: $scope.fullname,
 		      position: $scope.position,
-		      phonenumber: $scope.phonenumber,
 		      email: $scope.email,
 		      password: $scope.password
 			  });
-			  $scope.firstname = "";
-	          $scope.lastname = "";
-	          $scope.position = "";
-	          $scope.phonenumber = "";
-	          $scope.email = "";
-	          $scope.password = "";
 	  };
     }
 ]);
@@ -49,17 +42,10 @@ parentapp.controller("ParentCtrl", ["$scope",
 	  {
 		  var usersRef = ref.child("parents/"+$scope.phonenumber);		
           usersRef.set({
-			  firstname: $scope.firstname,
-              lastname: $scope.lastname,
-		      phonenumber: $scope.phonenumber,
+			  name: $scope.fullname,
 		      email: $scope.email,
 		      password: $scope.password
 			  });
-			  $scope.firstname = "";
-	          $scope.lastname = "";
-	          $scope.phonenumber = "";
-	          $scope.email = "";
-	          $scope.password = "";
 	  };
     }
 ]);
@@ -71,23 +57,16 @@ studentapp.controller("StudentCtrl", ["$scope",
 	  var ref = firebase.database().ref();
       $scope.studentInformation = function() 
 	  {
-		  var usersRef = ref.child("students/"+$scope.phonenumber);		
+		  var usersRef = ref.child("students/"+$scope.firstname+$scope.parentphonenumber);		  
           usersRef.set({
-			  firstname: $scope.firstname,
-              lastname: $scope.lastname,
-			  level: $scope.level,
-			  classroom: $scope.classroom,
-		      phonenumber: $scope.phonenumber,
-		      email: $scope.email,
-		      password: $scope.password
+              name: $scope.fullname,
+			  class: $scope.class
 			  });
-			  $scope.firstname = "";
-	          $scope.lastname = "";
-			  $scope.level = "";
-			  $scope.classroom = "";
-	          $scope.phonenumber = "";
-	          $scope.email = "";
-	          $scope.password = "";
+	      var users = ref.child("parents/"+$scope.parentphonenumber+"/children/"+$scope.firstname+$scope.parentphonenumber);
+		  users.set({
+              name: $scope.fullname,
+			  class: $scope.class
+			  });
 	  };
     }
 ]);
@@ -104,8 +83,6 @@ attendanceapp.controller("AttendanceCtrl", ["$scope",
 			  level: $scope.level,
               classroom: $scope.classroom
 			  });
-			  $scope.level = "";
-	          $scope.classroom = "";
 	  };
     }
 ]);
@@ -123,9 +100,6 @@ gradesapp.controller("GradesCtrl", ["$scope",
               classroom: $scope.classroom,
 		      grade: $scope.grade
 			  });
-			  $scope.level = "";
-	          $scope.classroom = "";
-	          $scope.grade = "";
 	  };
     }
 ]);
