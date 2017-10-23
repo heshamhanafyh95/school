@@ -49,12 +49,12 @@
 		<form name="F" ng-submit="parentInformation()">
 		<div class="form-group">
               <B><label>First name</label></B> 
-			  <input type="text" name="Fn" ng-model="firstname" class="form-control" placeholder="Abdallah" required>
+			  <input type="text" name="Fn" pattern="[A-Za-z]+" ng-model="firstname" class="form-control" placeholder="Abdallah" required>
 			  <span ng-show="F.Fn.$dirty && F.Fn.$error.required">Required!</span>
         </div>
 		<div class="form-group">
               <B><label>Last name</label></B> 
-			  <input type="text" name="Ln" ng-model="lastname" class="form-control" placeholder="Elgamal" required>
+			  <input type="text" name="Ln" pattern="[A-Za-z]+" ng-model="lastname" class="form-control" placeholder="Elgamal" required>
 			  <span ng-show="F.Ln.$dirty && F.Ln.$error.required">Required!</span>
         </div>
 		<div class="form-group">
