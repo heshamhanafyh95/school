@@ -40,15 +40,15 @@
 		</nav>
 <div class="container">
 	  <div class="panel panel-default">
-	    <div class="panel-heading"><h3><B>Upload Event</B></h3></div>
+	    <div class="panel-heading"><h3><B>Upload Event</B></h3>
+		</div>
 		<div class="panel-body">
 <div class="container">
     <div class="row">
         <div class="col-md-12" ng-app="uploadeventApp" ng-controller="UploadEventCtrl">
 		<form name="F" ng-submit="uploadEvent()">
 		   <div class="form-group">
-              <input type="file" name="fileupload" ng-file-select="onFileSelect($files)" ng-model="imageSrc" required>
-			  <img ng-src="{{imageSrc}}" ng-class="isSelectedImage(image)" ng-click="selectImage(image)">
+              <input type="file" name="fileupload" ng-model="imageSrc" required>
 			  <span ng-show="F.fileupload.$dirty && F.fileupload.$error.required">Required!</span>
 		   </div>
 		   <button type="submit" class="btn btn-primary" ng-disabled="F.$invalid"><B>Submit</B></button>
@@ -56,6 +56,8 @@
       </div>
 	  </div>
   </div>
+</div>
+</div>
 </div>
 	</body>
 </html>

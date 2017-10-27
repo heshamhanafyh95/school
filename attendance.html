@@ -47,24 +47,18 @@
 							<div class="col-md-11" ng-app="attendanceApp" ng-controller="AttendanceCtrl">
 								<form name="F" ng-submit="attendance()">
 								<div class="form-group">
-								          <B><label>Level</label></B><br>
-										   <select class="form-control" name="lev" ng-model="level" required>
-										         <option value="">None</option>
-                                                 <option value="option1">Option 1</option>
-                                                 <option value="option2">Option 2</option>
-                                                 <option value="option3">Option 3</option>
-                                           </select>
-										   <span ng-show="F.lev.$dirty && F.lev.$error.required">Required!</span>
+										<B><label>Student ID</label></B><br>
+										   <input type="text" name="stuid" pattern="[A-Za-z0-9]+" ng-model="studentid" class="form-control" placeholder="Abdallah01141454281" required>
+										   <span ng-show="F.stuid.$dirty && F.stuid.$error.required">Required!</span>
 							    </div>
 								<div class="form-group">
-										<B><label>Classroom</label></B><br>
-										   <select class="form-control" name="gr" ng-model="classroom" required>
+										<B><label>Class</label></B><br>
+										   <select class="form-control" name="classs" ng-model="class" required>
 										         <option value="">None</option>
-                                                 <option value="option1">Option 1</option>
-                                                 <option value="option2">Option 2</option>
-                                                 <option value="option3">Option 3</option>
+                                                 <option value="6A">6A</option>
+                                                 <option value="5B">5B</option>
                                            </select>
-										   <span ng-show="F.gr.$dirty && F.gr.$error.required">Required!</span>
+										   <span ng-show="F.classs.$dirty && F.classs.$error.required">Required!</span>
 							    </div>
 								<button type="submit" class="btn btn-primary" ng-disabled="F.$invalid"><B>Submit</B></button>
 								</form>

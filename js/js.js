@@ -13,7 +13,7 @@ var parentapp = angular.module("parentApp", ["firebase"]);
 var studentapp = angular.module("studentApp", ["firebase"]);
 var attendanceapp = angular.module("attendanceApp", ["firebase"]);
 var gradesapp = angular.module("gradesApp", ["firebase"]);
-var uploadeventapp = angular.module("uploadeventApp", ["firebase"]);
+
 
 employeeapp.controller("EmployeeCtrl", ["$scope",
 
@@ -78,10 +78,9 @@ attendanceapp.controller("AttendanceCtrl", ["$scope",
 	  var ref = firebase.database().ref();
       $scope.attendance = function() 
 	  {
-		  var usersRef = ref.child("attendance/"+$scope.level);		
+		  var usersRef = ref.child("students/"+$scope.studentid+"/attendance/");		
           usersRef.set({
-			  level: $scope.level,
-              classroom: $scope.classroom
+              class: $scope.class
 			  });
 	  };
     }
@@ -96,8 +95,8 @@ gradesapp.controller("GradesCtrl", ["$scope",
 	  {
 		  var usersRef = ref.child("grades/"+$scope.level);		
           usersRef.set({
-			  level: $scope.level,
-              classroom: $scope.classroom,
+              class: $scope.class,
+			  subject: $scope.subject,
 		      grade: $scope.grade
 			  });
 	  };

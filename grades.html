@@ -47,32 +47,31 @@
 							<div class="col-md-11" ng-app="gradesApp" ng-controller="GradesCtrl">
 								<form name="F" ng-submit="grades()">
 								<div class="form-group">
-								          <B><label>Level</label></B><br>
-										   <select class="form-control" name="lev" ng-model="level" required>
+								          <B><label>Class</label></B><br>
+										   <select class="form-control" name="classs" ng-model="class" required>
 										         <option value="">None</option>
-                                                 <option value="option1">Option 1</option>
-                                                 <option value="option2">Option 2</option>
-                                                 <option value="option3">Option 3</option>
+                                                 <option value="6A">6A</option>
+                                                 <option value="5B">5B</option>
                                            </select>
-										   <span ng-show="F.lev.$dirty && F.lev.$error.required">Required!</span>
+										   <span ng-show="F.classs.$dirty && F.classs.$error.required">Required!</span>
 							    </div>
 								<div class="form-group">
-										<B><label>Classroom</label></B><br>
-										   <select class="form-control" name="classr" ng-model="classroom" required>
+										<B><label>Subject</label></B><br>
+										   <select class="form-control" name="sub" ng-model="subject" required>
 										         <option value="">None</option>
-                                                 <option value="option1">Option 1</option>
-                                                 <option value="option2">Option 2</option>
-                                                 <option value="option3">Option 3</option>
+                                                 <option value="english">English</option>
+                                                 <option value="math">Math</option>
+                                                 <option value="arabic">Arabic</option>
                                            </select>
-										   <span ng-show="F.classr.$dirty && F.classr.$error.required">Required!</span>
+										   <span ng-show="F.sub.$dirty && F.sub.$error.required">Required!</span>
 							    </div>
 								<div class="form-group">
 										<B><label>Grade</label></B><br>
 										   <select class="form-control" name="gr" ng-model="grade" required>
 										         <option value="">None</option>
-                                                 <option value="option1">Option 1</option>
-                                                 <option value="option2">Option 2</option>
-                                                 <option value="option3">Option 3</option>
+                                                 <option value="quizzes">Quiz</option>
+                                                 <option value="mid">Midterm</option>
+                                                 <option value="final">Final</option>
                                            </select>
 										   <span ng-show="F.gr.$dirty && F.gr.$error.required">Required!</span>
 							    </div>
