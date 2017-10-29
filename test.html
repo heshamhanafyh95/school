@@ -26,16 +26,10 @@
 var db = firebase.firestore();
 
 db.collection("bus").doc("bus10").set({
-    driver name: "hany",
-    location: "11",
-    supervisor: "mona"
+    driver name: 'hany',
+    location: '11',
+    supervisor: 'mona'
 })
-.then(function(docRef) {
-    console.log("Document written with ID: ", docRef.id);
-})
-.catch(function(error) {
-    console.error("Error adding document: ", error);
-});
 </script>
 
 <h1> hello </h1>
