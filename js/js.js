@@ -14,7 +14,6 @@ var studentapp = angular.module("studentApp", ["firebase"]);
 var attendanceapp = angular.module("attendanceApp", ["firebase"]);
 var gradesapp = angular.module("gradesApp", ["firebase"]);
 
-
 employeeapp.controller("EmployeeCtrl", ["$scope",
 
   function($scope) 
@@ -50,17 +49,20 @@ parentapp.controller("ParentCtrl", ["$scope",
     }
 ]);
 
-studentapp.controller("StudentCtrl", ["$scope",
+studentapp.controller("StudentCtrl", ["$scope","$firebaseArray",
 
-  function($scope) 
+  function($scope,$firebaseArray) 
   {
 	  var ref = firebase.database().ref();
+	  var ref2 = ref.child("bus/");
+	  $scope.supervisors = $firebaseArray(ref2);
       $scope.studentInformation = function() 
 	  {
 		  var usersRef = ref.child("students/"+$scope.firstname+$scope.parentphonenumber);		  
           usersRef.set({
               name: $scope.fullname,
-			  class: $scope.class
+			  class: $scope.class,
+			  bussupervisor: $scope.bussuper
 			  });
 	      var users = ref.child("parents/"+$scope.parentphonenumber+"/children/"+$scope.firstname+$scope.parentphonenumber);
 		  users.set({

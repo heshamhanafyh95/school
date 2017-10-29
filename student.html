@@ -76,6 +76,15 @@
 			 <span ng-show="F.classr.$dirty && F.classr.$error.required">Required!</span>
             </label>
 		</div>
+		<div class="form-group">
+		     <B><label>Bus supervisor</label></B><br>
+			 <select class="form-control" name="bussu" ng-model="bussuper" required>
+			     <option value="">None</option>
+                 <option ng-repeat="n in supervisors" value="{{n.supervisor}}">{{n.supervisor}}</option>
+             </select>
+			 <span ng-show="F.bussu.$dirty && F.bussu.$error.required">Required!</span>
+            </label>
+		</div>
 		<button type="submit" class="btn btn-primary" ng-disabled="F.$invalid"><B>Submit</B></button>
 		</form>
 		</div>
