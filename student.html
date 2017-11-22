@@ -1,9 +1,12 @@
 <html>
 <head>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>		
+		<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-database.js"></script>
         <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
@@ -18,7 +21,6 @@
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
-		<script src="js/js.js"></script>
 		<style>input.ng-invalid{border:1px solid red;}</style>
 		<title>Student page</title>
 	</head>
@@ -45,28 +47,28 @@
 <div class="py-5">
 <div class="container">
     <div class="row">
-        <div class="col-md-11" ng-app="studentApp" ng-controller="StudentCtrl">
-		<form name="F" ng-submit="studentInformation()">
+        <div class="col-md-11" ng-app="">
+		<form name="F" id="Stuform" action="javascript:alert( 'Success!' );">
 		<div class="form-group">
               <B><label>First name</label></B> 
-			  <input type="text" name="Fn" pattern="[A-Za-z]+" ng-model="firstname" class="form-control" placeholder="Abdallah" required>
+			  <input type="text" name="Fn" id="Stufname" pattern="[A-Za-z]+" ng-model="firstname" class="form-control" placeholder="Abdallah" required>
 			  <span ng-show="F.Fn.$dirty && F.Fn.$error.required">Required!</span>
         </div>
 		<div class="form-group">
               <B><label>Full name</label></B>
-			  <input type="text" name="Fnn" pattern="[A-Z\sa-z]+" ng-model="fullname" class="form-control" placeholder="Elgamal" required>
+			  <input type="text" name="Fnn" id="Stuname" pattern="[A-Z\sa-z]+" ng-model="fullname" class="form-control" placeholder="Elgamal" required>
 			  <span ng-show="F.Fnn.$dirty && F.Fnn.$error.required">Required!</span>
         </div>
 		<div class="form-group">
 			  <B><label>Parent's phone number</label></B> 
-			  <input type="text" name="Pn" pattern="[0-9]+" ng-model="parentphonenumber" class="form-control" ng-minlength="9" ng-maxlength="12" placeholder="+20xxxxxxxxxx" required>
+			  <input type="text" name="Pn" id="Stuparpn" pattern="[0-9]+" ng-model="parentphonenumber" class="form-control" ng-minlength="9" ng-maxlength="12" placeholder="+20xxxxxxxxxx" required>
 			  <span ng-show="F.Pn.$dirty && F.Pn.$error.required">Required!</span>
 			  <span ng-show="F.Pn.$dirty && F.Pn.$error.minlength">Not a phone number!</span>
 			  <span ng-show="F.Pn.$dirty && F.Pn.$error.maxlength">Not a phone number!</span>
 		</div>
 		<div class="form-group">
 		     <B><label>Class</label></B><br>
-			 <select class="form-control" name="classr" ng-model="class" required>
+			 <select class="form-control" name="classr" id="Stuclass" ng-model="class" required>
 			     <option value="">None</option>
                  <option value="5A">5A</option>
                  <option value="5B">5B</option>
@@ -78,17 +80,23 @@
 		</div>
 		<div class="form-group">
 		     <B><label>Bus supervisor</label></B><br>
-			 <select class="form-control" name="bussu" ng-model="bussuper" required>
+			 <select class="form-control" name="bussu" id="Stubussup" ng-model="bussuper" required>
 			     <option value="">None</option>
-                 <option ng-repeat="n in supervisors" value="{{n.supervisor}}">{{n.supervisor}}</option>
+                 <option value="9">9</option>
              </select>
 			 <span ng-show="F.bussu.$dirty && F.bussu.$error.required">Required!</span>
             </label>
 		</div>
 		<button type="submit" class="btn btn-primary" ng-disabled="F.$invalid"><B>Submit</B></button>
 		</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
-	</body>
+<script src="js/jQuery.js"></script>
+</body>
 </html>
