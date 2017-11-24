@@ -1,29 +1,28 @@
 <html>
 <head>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>		
-		<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-database.js"></script>
-        <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
-		<link href="style/style.css" rel="stylesheet" />
-		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="assets/css/form-elements.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="shortcut icon" href="assets/ico/favicon.png">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
-		<style>input.ng-invalid{border:1px solid red;}</style>
-		<title>Student page</title>
-	</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
+<link href="style/style.css" rel="stylesheet" />
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/css/form-elements.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="shortcut icon" href="assets/ico/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+<style>input.ng-invalid{border:1px solid red;}</style>
+<title>Student page</title>
+</head>
 	<body background="assets/img/backgrounds/1.jpg">
 	<nav class="navbar navbar-inverse">
 		  <div class="container-fluid">
@@ -87,16 +86,20 @@
 			 <span ng-show="F.bussu.$dirty && F.bussu.$error.required">Required!</span>
             </label>
 		</div>
+		<div class="form-group">
+		<B><label>Upload student photo</label></B>
+        <input type="file" class="upload-group" id="studentphoto">
+        </div>
 		<button type="submit" class="btn btn-primary" ng-disabled="F.$invalid"><B>Submit</B></button>
 		</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
-	</div>
-</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
 <script src="js/jQuery.js"></script>
 </body>
 </html>
